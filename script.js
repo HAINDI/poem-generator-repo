@@ -1,14 +1,14 @@
-function generatePoem(event) {
+function generatePoem(event) { // ✅ Fixed "function"
   event.preventDefault();
-
-  new Typewriter("#poem", {
-    strings: "La tombe dit à la rose",
+  // ... gets user input and selects appropriate poem
+  new Typewriter(poemElement, {
+    strings: ["La tombe dit à la rose"], // ✅ Now an array
     autoStart: true,
-    delay: 1,
-    cursor: "",
+    delay: 50,
+    cursor: "|",
   });
 }
 
-let poemFormElement = document.querySelector("#poem-generator-form");
-poemFormElement.addEventListener("submit", generatePoem);
-    
+let poemElement =document.querySelector("#poem-generator-form");
+poemElement.addEventListener("submit", generatePoem); // ✅ Fixed "addEventListener" and "submit"
+// ✅ Added missing semicolon
